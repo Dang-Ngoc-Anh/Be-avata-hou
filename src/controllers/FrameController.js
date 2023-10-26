@@ -44,8 +44,6 @@ const getFrame = async (req, res) => {
 };
 
 function toBase64(filePath) {
-  console.log("sad ");
-  console.log(fs.readFileSync(filePath));
   const img = fs.readFileSync(filePath);
   return Buffer.from(img).toString("base64");
 }
@@ -53,11 +51,8 @@ const getFrameById = async (req, res) => {
   try {
     const { id } = req.params;
     const frame = await Frame.findByPk(id);
-    console.log(frame.image);
     let image = `${frame.image}`;
-    // toBase64(image);
     const withPrefix = `data:image/png;base64,${toBase64(image)}`;
-    console.log(withPrefix);
     res.json({
       message: "Get frame id success fully",
       data: withPrefix,

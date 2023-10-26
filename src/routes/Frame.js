@@ -1,5 +1,9 @@
 const express = require("express");
-const { getFrame, addFrame,getFrameById } = require("../controllers/FrameController.js");
+const {
+  getFrame,
+  addFrame,
+  getFrameById,
+} = require("../controllers/FrameController.js");
 const uploadFile = require("../middleware/middleware.js");
 const router = express.Router();
 
