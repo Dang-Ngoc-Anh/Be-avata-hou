@@ -19,14 +19,6 @@ const Frame = sequelize.define("Frame", {
   description: {
     type: DataTypes.STRING,
   },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DATE,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    defaultValue: DATE,
-  },
 });
 sequelize.sync();
 module.exports = Frame;
